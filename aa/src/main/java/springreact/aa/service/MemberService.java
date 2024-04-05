@@ -1,5 +1,6 @@
 package springreact.aa.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springreact.aa.domain.Member;
 import springreact.aa.repository.MemberRepository;
@@ -8,11 +9,12 @@ import springreact.aa.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class MemberService {
+
     private final MemberRepository memberRepository;
 
-    MemberService(MemberRepository memberRepository) {
+    @Autowired
+    public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
