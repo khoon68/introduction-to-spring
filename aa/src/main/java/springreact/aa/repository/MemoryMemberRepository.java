@@ -32,4 +32,9 @@ public class MemoryMemberRepository implements MemberRepository {
     public List<Member> findAll() {
         return new ArrayList<>(memberDB.values());
     }
+
+    @Override
+    public void clearDB() {
+        memberDB.clear();
+    }
 }

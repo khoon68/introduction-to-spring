@@ -10,7 +10,11 @@ import java.util.Optional;
 
 @Service
 public class MemberService {
-    MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     public Long join(Member member) {
         validateDuplicate(member);
