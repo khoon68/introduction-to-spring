@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>MemberList</title>
+</head>
+<body>
+    <h1># 회원</h1>
+
+    <div id="container">
+        <table>
+            <thead>
+            <th>id</th>
+            <th>name</th>
+            </thead>
+
+            <tbody>
+            <tr th:each="member: ${members}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
